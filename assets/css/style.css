@@ -1,0 +1,15 @@
+footer {
+    background-color: #212529;
+    color: white;
+    padding: 5px;
+    position: sticky;
+    bottom: 0px;
+    margin-top: 20%;
+  }
+  body {
+    background: url() no-repeat;
+    background-size: cover;
+}
+.card {
+    margin: 5%;
+}
