@@ -30,6 +30,9 @@ $(document).ready(function () {
         currentScore = 0;
 
         $(".yourNum").text(currentScore);
+
+        $(".totalWins").text(totalWins);
+        $(".totalLoses").text(totalLoses);
     }
     // function to reset all game scores and values
     function resetGame() {
@@ -48,6 +51,12 @@ $(document).ready(function () {
         currentScore = 0;
         totalWins = 0;
         totalLoses = 0;
+
+        $(".numToGet").text(scoreToWin);
+        $(".yourNum").text(currentScore);
+
+        $(".totalWins").text(totalWins);
+        $(".totalLoses").text(totalLoses);
     }
     // this sets the game up initially
     resetGame();
@@ -60,7 +69,7 @@ $(document).ready(function () {
         console.log(currentScore);
         $(".yourNum").text(currentScore);
         checkWin();
-        
+
     });
 
     $(".img2").on("click", function () {
@@ -89,11 +98,14 @@ $(document).ready(function () {
         resetGame();
     });
 
+    // checks for a win or loss and updates the page as well as variables.
     function checkWin() {
         if (currentScore > scoreToWin) {
 
             totalLoses++;
             alert("You Lose!!!");
+            $(".totalWins").text(totalWins);
+            $(".totalLoses").text(totalLoses);
             resetValues();
 
         }
@@ -101,11 +113,11 @@ $(document).ready(function () {
 
             totalWins++;
             alert("You Win!!!");
+            $(".totalWins").text(totalWins);
+            $(".totalLoses").text(totalLoses);
             resetValues();
         }
     }
-
-
 
 
 
