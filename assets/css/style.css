@@ -4,12 +4,15 @@ footer {
     padding: 5px;
     position: sticky;
     bottom: 0px;
-    margin-top: 20%;
+    margin-top: 30%;
   }
   body {
-    background: url() no-repeat;
+    background: url("../images/background.gif") no-repeat;
     background-size: cover;
 }
 .card {
     margin: 5%;
+}
+.jumbotron {
+    margin-bottom: 5%;
 }
