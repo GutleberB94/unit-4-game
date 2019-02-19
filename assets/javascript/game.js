@@ -1,13 +1,14 @@
 // create variables to store the required information
+$(document).ready(function () {
+    var scoreToWin = 0;
+    var currentScore = 0;
+    var totalWins = 0;
+    var totalLoses = 0;
+    var imgVal1 = 0;
+    var imgVal2 = 0;
+    var imgVal3 = 0;
+    var imgVal4 = 0;
 
-var scoreToWin = 0;
-var currentScore = 0;
-var totalWins = 0;
-var totalLoses = 0;
-var imgVal1 = 0;
-var imgVal2 = 0;
-var imgVal3 = 0;
-var imgVal4 = 0;
 
 
     // function to reset the values.
@@ -25,24 +26,44 @@ var imgVal4 = 0;
         console.log("win: " + scoreToWin);
     }
     // function to reset all game scores and values
-function resetGame() {
-    imgVal1 = Math.floor(Math.random() * 12) + 1;
-    console.log("val 1: " + imgVal1);
-    imgVal2 = Math.floor(Math.random() * 12) + 1;
-    console.log("val 2: " + imgVal2);
-    imgVal3 = Math.floor(Math.random() * 12) + 1;
-    console.log("val 3: " + imgVal3);
-    imgVal4 = Math.floor(Math.random() * 12) + 1;
-    console.log("val 4: " + imgVal4);
+    function resetGame() {
+        imgVal1 = Math.floor(Math.random() * 12) + 1;
+        console.log("val 1: " + imgVal1);
+        imgVal2 = Math.floor(Math.random() * 12) + 1;
+        console.log("val 2: " + imgVal2);
+        imgVal3 = Math.floor(Math.random() * 12) + 1;
+        console.log("val 3: " + imgVal3);
+        imgVal4 = Math.floor(Math.random() * 12) + 1;
+        console.log("val 4: " + imgVal4);
 
-    scoreToWin = Math.floor(Math.random() * 102) + 19;
-    console.log("win: " + scoreToWin);
+        scoreToWin = Math.floor(Math.random() * 102) + 19;
+        console.log("win: " + scoreToWin);
 
-    currentScore = 0;
-    totalWins = 0;
-    totalLoses = 0;
+        currentScore = 0;
+        totalWins = 0;
+        totalLoses = 0;
     }
 
+    resetGame();
 
 
+        $(".img1").on("click", function() {
+            currentScore = currentScore + imgVal1;
+            console.log(currentScore);
+        });
 
+        $(".img2").on("click", function() {
+            currentScore = currentScore + imgVal2;
+            console.log(currentScore);
+        });
+
+        $(".img3").on("click", function() {
+            currentScore = currentScore + imgVal3;
+            console.log(currentScore);
+        });
+
+        $(".img4").on("click", function() {
+            currentScore = currentScore + imgVal4;
+            console.log(currentScore);
+        });
+    });
