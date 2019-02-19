@@ -10,8 +10,8 @@ var imgVal3 = 0;
 var imgVal4 = 0;
 
 
-
-    function reset() {
+    // function to reset the values.
+    function resetValues() {
         imgVal1 = Math.floor(Math.random() * 12) + 1;
         console.log("val 1: " + imgVal1);
         imgVal2 = Math.floor(Math.random() * 12) + 1;
@@ -23,12 +23,26 @@ var imgVal4 = 0;
 
         scoreToWin = Math.floor(Math.random() * 102) + 19;
         console.log("win: " + scoreToWin);
+    }
+    // function to reset all game scores and values
+function resetGame() {
+    imgVal1 = Math.floor(Math.random() * 12) + 1;
+    console.log("val 1: " + imgVal1);
+    imgVal2 = Math.floor(Math.random() * 12) + 1;
+    console.log("val 2: " + imgVal2);
+    imgVal3 = Math.floor(Math.random() * 12) + 1;
+    console.log("val 3: " + imgVal3);
+    imgVal4 = Math.floor(Math.random() * 12) + 1;
+    console.log("val 4: " + imgVal4);
 
-        currentScore = 0;
-        totalWins = 0;
-        totalLoses = 0;
-}
+    scoreToWin = Math.floor(Math.random() * 102) + 19;
+    console.log("win: " + scoreToWin);
 
-reset();
+    currentScore = 0;
+    totalWins = 0;
+    totalLoses = 0;
+    }
+
+
 
 
