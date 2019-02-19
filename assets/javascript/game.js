@@ -24,6 +24,12 @@ $(document).ready(function () {
 
         scoreToWin = Math.floor(Math.random() * 102) + 19;
         console.log("win: " + scoreToWin);
+
+        $(".numToGet").text(scoreToWin);
+
+        currentScore = 0;
+
+        $(".yourNum").text(currentScore);
     }
     // function to reset all game scores and values
     function resetGame() {
@@ -43,27 +49,64 @@ $(document).ready(function () {
         totalWins = 0;
         totalLoses = 0;
     }
-
+    // this sets the game up initially
     resetGame();
 
 
-        $(".img1").on("click", function() {
-            currentScore = currentScore + imgVal1;
-            console.log(currentScore);
-        });
+    // click events
 
-        $(".img2").on("click", function() {
-            currentScore = currentScore + imgVal2;
-            console.log(currentScore);
-        });
-
-        $(".img3").on("click", function() {
-            currentScore = currentScore + imgVal3;
-            console.log(currentScore);
-        });
-
-        $(".img4").on("click", function() {
-            currentScore = currentScore + imgVal4;
-            console.log(currentScore);
-        });
+    $(".img1").on("click", function () {
+        currentScore = currentScore + imgVal1;
+        console.log(currentScore);
+        $(".yourNum").text(currentScore);
+        checkWin();
+        
     });
+
+    $(".img2").on("click", function () {
+        currentScore = currentScore + imgVal2;
+        console.log(currentScore);
+        $(".yourNum").text(currentScore);
+        checkWin();
+    });
+
+    $(".img3").on("click", function () {
+        currentScore = currentScore + imgVal3;
+        console.log(currentScore);
+        $(".yourNum").text(currentScore);
+        checkWin();
+    });
+
+    $(".img4").on("click", function () {
+        currentScore = currentScore + imgVal4;
+        console.log(currentScore);
+        $(".yourNum").text(currentScore);
+        checkWin();
+    });
+
+    $("#reset").on("click", function () {
+
+        resetGame();
+    });
+
+    function checkWin() {
+        if (currentScore > scoreToWin) {
+
+            totalLoses++;
+            alert("You Lose!!!");
+            resetValues();
+
+        }
+        else if (currentScore === scoreToWin) {
+
+            totalWins++;
+            alert("You Win!!!");
+            resetValues();
+        }
+    }
+
+
+
+
+
+});
